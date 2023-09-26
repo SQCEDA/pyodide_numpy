@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+      <script src="./pyodide.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      async function main(){
+        let pyodide = await loadPyodide();
+        await pyodide.loadPackage("numpy")
+        globalThis.pyodide=pyodide;
+        console.log(pyodide.runPython("1 + 2"));
+      }
+      main();
+    </script>
+  </body>
+</html>
